@@ -20,8 +20,6 @@ use Nette\Utils\Json;
  */
 class UserAgentString extends UserAgent
 {
-    use SmartObject;
-
     /** @var Cache */
     private static $cache;
     /** @var array */
