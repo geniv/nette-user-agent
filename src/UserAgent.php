@@ -202,4 +202,16 @@ class UserAgent
     {
         return (preg_match('#Gecko/([a-zA-Z0-9\.]+)#i', self::getUserAgent($agent)) == 1);
     }
+
+
+    /**
+     * Is wget.
+     *
+     * @param string|null $agent
+     * @return bool
+     */
+    public static function isWget(string $agent = null): bool
+    {
+        return (preg_match('#Wget/([a-zA-Z0-9\.]+)#i', self::getUserAgent($agent)) == 1);
+    }
 }

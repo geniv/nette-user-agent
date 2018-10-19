@@ -5,7 +5,6 @@ namespace UserAgent;
 use Nette\Caching\Cache;
 use Nette\Caching\IStorage;
 use Nette\Caching\Storages\DevNullStorage;
-use Nette\SmartObject;
 use Nette\Utils\Json;
 
 
@@ -20,8 +19,6 @@ use Nette\Utils\Json;
  */
 class UserAgentString extends UserAgent
 {
-    use SmartObject;
-
     /** @var Cache */
     private static $cache;
     /** @var array */
@@ -232,6 +229,22 @@ class UserAgentString extends UserAgent
             return parent::isIExplorer($agent);
         }
         return $name == 'Internet Explorer';
+    }
+
+
+    /**
+     * Is wget.
+     *
+     * @param string|null $agent
+     * @return bool
+     */
+    public static function isWget(string $agent = null): bool
+    {
+        $name = self::getData($agent, 'agent_name');
+        if (!$name) {
+            return parent::isWget($agent);
+        }
+        return $name == 'Wget';
     }
 
 
