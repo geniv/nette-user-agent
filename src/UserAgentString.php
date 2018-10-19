@@ -5,7 +5,6 @@ namespace UserAgent;
 use Nette\Caching\Cache;
 use Nette\Caching\IStorage;
 use Nette\Caching\Storages\DevNullStorage;
-use Nette\SmartObject;
 use Nette\Utils\Json;
 
 
