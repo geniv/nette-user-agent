@@ -234,6 +234,22 @@ class UserAgentString extends UserAgent
 
 
     /**
+     * Is wget.
+     *
+     * @param string|null $agent
+     * @return bool
+     */
+    public static function isWget(string $agent = null): bool
+    {
+        $name = self::getData($agent, 'agent_name');
+        if (!$name) {
+            return parent::isWget($agent);
+        }
+        return $name == 'Wget';
+    }
+
+
+    /**
      * Is browser.
      *
      * @param array       $browsers
